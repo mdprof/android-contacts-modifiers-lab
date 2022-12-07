@@ -51,10 +51,10 @@ public class SortDialogFragment extends BaseBottomSheetDialogFragment<SortViewMo
     }
 
     private void updateState(SortUiState state) {
-        binding.applyButton.setEnabled(state.isApplyEnable);
+        binding.applyButton.setEnabled(state.getisApplyEnable());
 
-        if (state.newSelectedSortType != null) {
-            getParentFragmentManager().setFragmentResult(REQUEST_KEY, createBundle(state.newSelectedSortType));
+        if (state.getnewSelectedSortType() != null) {
+            getParentFragmentManager().setFragmentResult(REQUEST_KEY, createBundle(state.getnewSelectedSortType()));
             dismiss();
         }
     }

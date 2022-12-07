@@ -34,7 +34,7 @@ public class SortViewModel extends BaseBottomSheetViewModel {
 
     @Override
     public void onApplyClick() {
-        uiState.newSelectedSortType = selectedSortType;
+        uiState.setnewSelectedSortType(selectedSortType);
         updateUiState();
     }
 
@@ -62,7 +62,7 @@ public class SortViewModel extends BaseBottomSheetViewModel {
     }
 
     private void updateUiState() {
-        uiState.isApplyEnable = !defaultSortType.equals(selectedSortType);
+        uiState.setisApplyEnable(!defaultSortType.equals(selectedSortType));
         uiStateLiveDate.setValue(uiState);
     }
 }
